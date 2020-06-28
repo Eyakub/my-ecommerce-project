@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-print(TEMPLATES_DIR)
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
@@ -42,9 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    
+    'app_login',
+    'app_shop',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Custom user model
+AUTH_USER_MODEL = 'app_login.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
