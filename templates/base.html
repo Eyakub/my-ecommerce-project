@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>{% block title_block %} E-com | Eyakub {% endblock %}</title>
+</head>
+<body>
+    <div class="container" style="padding-top:15px">
+        <div class="messages container mt-2">
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div {% if message.tags %} class="alert alert-{{message.tags}} {% endif %}" role="alert">
+                        {{ message }}
+                        <button class='close' data-dismiss="alert" aria-label='close'>
+                            <span aria-hidden='true'>&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+                
+        </div>
+        {% block body_block %}
+        {% endblock %}
+    </div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/esm/popper.min.js"></script>
+</body>
+</html>
