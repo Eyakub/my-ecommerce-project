@@ -1,3 +1,5 @@
+{% load cart_tag %}
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{% url 'app_shop:home' %}">Django E-commerce Project</a>
@@ -17,8 +19,9 @@
             {% if request.user.is_authenticated %}
                 
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{% url 'app_order:cart' %}" class="nav-link">
                     <i class="fa fa-shopping-cart"></i> Cart
+                    <span class="badge badge-light">{{ request.user |cart_total }}</span>
                 </a>
              </li>
             <li class="nav-item dropdown">
