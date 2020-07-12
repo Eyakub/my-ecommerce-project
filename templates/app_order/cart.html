@@ -35,7 +35,7 @@
                             </a>
                         </td>
                         <td aligh="right">&#2547; {{ cart.get_total }}</td>
-                        <td><a href="#" class="btn btn-danger btn-sm">Remove from Cart</a></td>
+                        <td><a href="{% url 'app_order:remove' pk=cart.item.pk %}" class="btn btn-danger btn-sm">Remove from Cart</a></td>
                     </tr>
                 {% endfor %}
                 <tr>
