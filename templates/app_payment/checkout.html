@@ -34,6 +34,11 @@
                     <span class="float-right"><b>&#2547; {{ order_total|floatformat:2 }}</b></span>
                 </div>
             </div>
+            <br><br>
+            {{ is saved_address.is_fully_filled }}
+                <a href="#" class="btn btn-warning btn-md">Make Payment</a>
+            {% else %}
+            {% endif %}
         </div>
     </div>
 </div>
