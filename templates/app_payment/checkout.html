@@ -35,7 +35,7 @@
                 </div>
             </div>
             <br><br>
-            {{ is saved_address.is_fully_filled }}
+            {{ if saved_address.is_fully_filled }}
                 <a href="#" class="btn btn-warning btn-md">Make Payment</a>
             {% else %}
             {% endif %}
